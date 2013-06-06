@@ -8,7 +8,7 @@ define(function(require) {
 			'inbox': 'inbox',
 			'inbox/compose': 'inboxCompose',
 			'contacts': 'contacts',
-			'tasks': 'tasks'
+			'restaurants': 'restaurants'
 		},
 
 		home: function () {
@@ -27,8 +27,8 @@ define(function(require) {
 			require('./../apps/contacts/app').run(viewManager);
 		},
 
-		tasks: function () {
-			require('./../apps/tasks/app').run(viewManager);
+		restaurants: function () {
+			require('./../apps/restaurants/app').run(viewManager);
 		}
 	});
 

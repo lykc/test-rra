@@ -8,7 +8,7 @@ var app = express();
 var oneMonth = 2678400000;
 
 app.configure(function(){
-	app.set('port', process.env.PORT || 3000);
+	app.set('port', process.env.PORT || 8000);
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'ejs');
 	app.use(express.favicon());
@@ -32,9 +32,9 @@ app.configure('production', function(){
 // api endpoinds
 require('./source/api/emails')(app);
 require('./source/api/contacts')(app);
-require('./source/api/tasks')(app);
+require('./source/api/restaurants')(app);
 
 http.createServer(app).listen(app.get('port'), function(){
 	var environment = process.env.NODE_ENV || 'development';
-	console.log('SPA boilerplate started: ' + app.get('port') + ' (' + environment + ')');
+	console.log('Restaurant rater app: ' + app.get('port') + ' (' + environment + ')');
 });
